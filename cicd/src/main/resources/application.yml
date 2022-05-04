@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: cicd
+  datasource:
+    url: jdbc:mysql://192.168.0.109:3306/cicd?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8&allowMultiQueries=true
+    username: root
+    password: password
+    druid:
+      initial-size: 5
+      min-idle: 10
+      max-active: 20
+      max-wait: 6000
+      timeBetweenEvictionRunsMillis: 5000
+      minEvictableIdleTimeMillis: 300000
+      maxEvictableIdleTimeMillis: 900000
+      validation-query: SELECT 1
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+  freemarker:
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html;
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    suffix: .ftl
+    template-loader-path: classpath:/templates
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml

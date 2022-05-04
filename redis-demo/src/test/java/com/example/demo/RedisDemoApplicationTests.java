@@ -15,7 +15,9 @@ class RedisDemoApplicationTests {
     @Test
     void contextLoads() {
 //        redisTemplate.opsForValue().set("testKey","wangzaogen");
-        System.out.println(redisTemplate.opsForValue().get("name"));
+//        System.out.println(redisTemplate.opsForValue().get("name"));
+        int a = 1+3;
+        assert a == 4;
     }
 
 }
